@@ -19,9 +19,9 @@ void input() {
 			cout << "\nmaksimum panjang array adalah 20" << endl;
 	}
 
-	cout << "\n------------------" << endl;
+	cout << "\n==================" << endl;
 	cout << "\nenter array element" << endl;
-	cout << "\n------------------" << endl;
+	cout << "\n==================" << endl;
 
 	for (int i = 0; i < n; i++)
 	{
@@ -65,7 +65,7 @@ void q_short(int low, int high)
 		}
 		cmp_count++;
 		//search for an element less than or equal to pivot
-		while ((arr[j] <= pivot) && (j <= low))							// langkah 7
+		while ((arr[j] > pivot) && (j >= low))							// langkah 7
 		{
 			j--;														// langkah 8
 			cmp_count++;
@@ -109,4 +109,16 @@ void display() {
 
 	cout << "\n\Number of comparasions: " << cmp_count << endl;
 	cout << "Number of data movements: " << mov_count << endl;
+}
+
+int main()
+{
+
+	input();
+	//sort the array using quick sort
+	q_short(0, n - 1);
+	display();
+	system("pause");
+
+	return 0;
 }
